@@ -18,7 +18,7 @@ Continued from a previous project: [P2-SciFi-Platformer](https://github.com/bsu-
 - Circle/B/A to unpause
 
 ### GitHub Pages Web Release
-[LABS: The Platform Experiment](https://bsu-cs315.github.io/FP-LABS/)
+[LABS: The Platform Experiment](https://astafford2.github.io/LABS-PlatformerExperiment/)
 
 ## Project Report
 ### Layers and Masks Documentation:
