@@ -1,0 +1,406 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://src/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tiles/BGTile (1).png" type="Texture" id=2]
+[ext_resource path="res://assets/Tiles/BGTile (7).png" type="Texture" id=3]
+[ext_resource path="res://assets/Tiles/BGTile (4).png" type="Texture" id=4]
+[ext_resource path="res://assets/Tiles/BGTile (3).png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/Fino.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/fonts/retro_computer_personal_use.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/sounds/ChiptuneIntroClipped.ogg" type="AudioStream" id=8]
+
+[sub_resource type="TileSet" id=1]
+0/name = "BGTile (1).png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "BGTile (3).png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "BGTile (4).png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "BGTile (7).png 3"
+3/texture = ExtResource( 3 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 32, 64, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="DynamicFont" id=2]
+size = 55
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=7]
+length = 2.75
+tracks/0/type = "value"
+tracks/0/path = NodePath("LABSSection:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -550, 137.545 ), Vector2( 263.5, 137.545 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ThePlatformSection:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.25, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ExperimentSection:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.25, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TitleScreenControls:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ThePlatformSection:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ExperimentSection:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 22
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 15
+font_data = ExtResource( 7 )
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2( -1, -0.555 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1026, 600 )
+
+[node name="Background" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 65536, 2, 0, 65537, 1, 0, 65538, 2, 0, 65539, 1, 0, 65540, 2, 0, 65541, 1, 0, 65542, 2, 0, 65543, 1, 0, 65544, 2, 0, 65545, 1, 0, 65546, 2, 0, 65547, 1, 0, 65548, 2, 0, 65549, 1, 0, 65550, 2, 0, 65551, 1, 0, 65552, 2, 0, 131072, 1, 0, 131073, 2, 0, 131074, 1, 0, 131075, 2, 0, 131076, 1, 0, 131077, 2, 0, 131078, 1, 0, 131079, 2, 0, 131080, 1, 0, 131081, 2, 0, 131082, 1, 0, 131083, 2, 0, 131084, 1, 0, 131085, 2, 0, 131086, 1, 0, 131087, 2, 0, 131088, 1, 0, 196608, 2, 0, 196609, 1, 0, 196610, 2, 0, 196611, 1, 0, 196612, 2, 0, 196613, 1, 0, 196614, 2, 0, 196615, 1, 0, 196616, 2, 0, 196617, 1, 0, 196618, 2, 0, 196619, 1, 0, 196620, 2, 0, 196621, 1, 0, 196622, 2, 0, 196623, 1, 0, 196624, 2, 0, 262144, 1, 0, 262145, 2, 0, 262146, 1, 0, 262147, 2, 0, 262148, 1, 0, 262149, 2, 0, 262150, 1, 0, 262151, 2, 0, 262152, 1, 0, 262153, 2, 0, 262154, 1, 0, 262155, 2, 0, 262156, 1, 0, 262157, 2, 0, 262158, 1, 0, 262159, 2, 0, 262160, 1, 0, 327680, 2, 0, 327681, 1, 0, 327682, 2, 0, 327683, 1, 0, 327684, 2, 0, 327685, 1, 0, 327686, 2, 0, 327687, 1, 0, 327688, 2, 0, 327689, 1, 0, 327690, 2, 0, 327691, 1, 0, 327692, 2, 0, 327693, 1, 0, 327694, 2, 0, 327695, 1, 0, 327696, 2, 0, 393216, 1, 0, 393217, 2, 0, 393218, 1, 0, 393219, 2, 0, 393220, 1, 0, 393221, 2, 0, 393222, 1, 0, 393223, 2, 0, 393224, 1, 0, 393225, 2, 0, 393226, 1, 0, 393227, 2, 0, 393228, 1, 0, 393229, 2, 0, 393230, 1, 0, 393231, 2, 0, 393232, 1, 0, 458752, 2, 0, 458753, 1, 0, 458754, 2, 0, 458755, 1, 0, 458756, 2, 0, 458757, 1, 0, 458758, 2, 0, 458759, 1, 0, 458760, 2, 0, 458761, 1, 0, 458762, 2, 0, 458763, 1, 0, 458764, 2, 0, 458765, 1, 0, 458766, 2, 0, 458767, 1, 0, 458768, 2, 0, 524288, 1, 0, 524289, 2, 0, 524290, 1, 0, 524291, 2, 0, 524292, 1, 0, 524293, 2, 0, 524294, 1, 0, 524295, 2, 0, 524296, 1, 0, 524297, 2, 0, 524298, 1, 0, 524299, 2, 0, 524300, 1, 0, 524301, 2, 0, 524302, 1, 0, 524303, 2, 0, 524304, 1, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0 )
+
+[node name="LABSSection" type="Label" parent="."]
+margin_left = 263.5
+margin_top = 137.545
+margin_right = 762.5
+margin_bottom = 268.545
+custom_fonts/font = SubResource( 2 )
+text = "LABS:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThePlatformSection" type="Label" parent="."]
+margin_left = 263.5
+margin_top = 137.545
+margin_right = 762.5
+margin_bottom = 268.545
+custom_fonts/font = SubResource( 2 )
+text = "The Platform"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExperimentSection" type="Label" parent="."]
+margin_left = 263.5
+margin_top = 137.545
+margin_right = 762.5
+margin_bottom = 268.545
+custom_fonts/font = SubResource( 2 )
+text = "
+Experiment"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleScreenControls" type="VBoxContainer" parent="."]
+margin_left = 343.102
+margin_top = 414.952
+margin_right = 681.102
+margin_bottom = 540.952
+size_flags_horizontal = 5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="TitleScreenControls"]
+margin_left = 90.0
+margin_right = 248.0
+margin_bottom = 52.0
+hint_tooltip = "Start the game!"
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 3 )
+text = "BEGIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsButton" type="Button" parent="TitleScreenControls"]
+margin_left = 63.0
+margin_top = 56.0
+margin_right = 275.0
+margin_bottom = 89.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 4 )
+text = "Instructions"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleScreenControls"]
+margin_top = 93.0
+margin_right = 338.0
+margin_bottom = 126.0
+
+[node name="LevelSelectButton" type="Button" parent="TitleScreenControls/HBoxContainer"]
+margin_right = 205.0
+margin_bottom = 33.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 5 )
+text = "Level Select"
+
+[node name="CreditsButton" type="Button" parent="TitleScreenControls/HBoxContainer"]
+margin_left = 209.0
+margin_right = 338.0
+margin_bottom = 33.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 6 )
+text = "Credits"
+
+[node name="IntroAnim" type="AnimationPlayer" parent="."]
+autoplay = "IntroAnim"
+anims/IntroAnim = SubResource( 7 )
+
+[node name="InstructionsPopup" type="Popup" parent="."]
+margin_left = 317.0
+margin_top = 187.0
+margin_right = 357.0
+margin_bottom = 227.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Label" parent="InstructionsPopup"]
+margin_right = 431.0
+margin_bottom = 254.0
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "How to play!
+Keyboard:
+- WASD or arrow keys to move and jump
+- Space to melee
+- Space to fire projectile
+- Tab to pause game, space to unpause
+
+Controller:
+- Left stick to move left or right
+- Cross/A/B to jump!
+- Square/X/Y to melee
+- R2 to fire projectile
+- Options/Start/+ to pause
+- Circle/B/A to unpause"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelectPopup" type="Popup" parent="."]
+margin_left = 407.96
+margin_top = 311.408
+margin_right = 615.96
+margin_bottom = 467.408
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelectBackground" type="ColorRect" parent="LevelSelectPopup"]
+margin_left = -5.0
+margin_top = 4.0
+margin_right = 211.0
+margin_bottom = 157.0
+color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectPopup"]
+margin_right = 40.0
+margin_bottom = 40.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelectLabel" type="Label" parent="LevelSelectPopup/VBoxContainer"]
+margin_right = 206.0
+margin_bottom = 29.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 10 )
+text = "Level Select"
+align = 1
+
+[node name="Level1Button" type="Button" parent="LevelSelectPopup/VBoxContainer"]
+margin_top = 33.0
+margin_right = 206.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 11 )
+text = "Level 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2Button" type="Button" parent="LevelSelectPopup/VBoxContainer"]
+margin_top = 64.0
+margin_right = 206.0
+margin_bottom = 91.0
+custom_fonts/font = SubResource( 11 )
+text = "Level 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3Button" type="Button" parent="LevelSelectPopup/VBoxContainer"]
+margin_top = 95.0
+margin_right = 206.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 11 )
+text = "Level 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4Button" type="Button" parent="LevelSelectPopup/VBoxContainer"]
+margin_top = 126.0
+margin_right = 206.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 11 )
+text = "Level 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IntroPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+autoplay = true
+[connection signal="pressed" from="TitleScreenControls/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="TitleScreenControls/InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
+[connection signal="pressed" from="TitleScreenControls/HBoxContainer/LevelSelectButton" to="." method="_on_LevelSelectButton_pressed"]
+[connection signal="pressed" from="TitleScreenControls/HBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="LevelSelectPopup/VBoxContainer/Level1Button" to="." method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="LevelSelectPopup/VBoxContainer/Level2Button" to="." method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="LevelSelectPopup/VBoxContainer/Level3Button" to="." method="_on_Level3Button_pressed"]
+[connection signal="pressed" from="LevelSelectPopup/VBoxContainer/Level4Button" to="." method="_on_Level4Button_pressed"]
