@@ -1,4 +1,6 @@
-extends Node2D
+extends Node
+
+class_name Level
 
 
 onready var instructions_popup := $InstructionsPopup
