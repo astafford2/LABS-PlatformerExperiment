@@ -1,4 +1,4 @@
-extends "Level.gd"
+extends Level
 
 
 var enemy_count := 0
