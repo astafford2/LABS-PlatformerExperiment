@@ -1,33 +1,36 @@
 extends Node2D
 
 
-onready var instructions_popup = $InstructionsPopup
-onready var pause_popup = $PausePopup
+onready var instructions_popup := $InstructionsPopup
+onready var pause_popup := $PausePopup
 
-onready var player = $Player
-onready var player_cam = $Player/PlayerCam
-onready var player_sprite = $Player/AnimatedSprite
-onready var queue_free_timer = $Player/QueueFreeTimer
+onready var player := $Player
+onready var player_cam := $Player/PlayerCam
+onready var player_sprite := $Player/AnimatedSprite
+onready var queue_free_timer := $Player/QueueFreeTimer
 
-onready var enemy = $Enemy
+var soul_count := 0
+onready var soul_count_label := $InfoHUDLayer/SoulCountLabel
+onready var soul_group := $SoulGroup
 
-onready var parallax_background = $ParallaxBackground
-onready var level_cam = $LevelCam
-onready var game_over_lose_hud = $GameOverLoseHUD
-onready var game_over_win_hud = $GameOverWinHUD
-onready var traps_area = $TrapsArea
+onready var parallax_background := $ParallaxBackground
+onready var level_cam := $LevelCam
+onready var game_over_lose_hud := $GameOverLoseHUD
+onready var game_over_win_hud := $GameOverWinHUD
+onready var traps_area := $TrapsArea
 
-onready var death_sound_player = $DeathSoundPlayer
-onready var win_sound_player = $WinSoundPlayer
+onready var death_sound_player := $DeathSoundPlayer
+onready var win_sound_player := $WinSoundPlayer
 
-onready var timer_hud = $TimeHUD
-onready var time_label = $TimeHUD/TimeLabel
-onready var seconds_timer = $TimeHUD/SecondsTimer
-onready var minutes_timer = $TimeHUD/MinutesTimer
+onready var timer_hud := $InfoHUDLayer/TimeHUD
+onready var time_label := $InfoHUDLayer/TimeHUD/TimeLabel
+onready var seconds_timer := $InfoHUDLayer/TimeHUD/SecondsTimer
+onready var minutes_timer := $InfoHUDLayer/TimeHUD/MinutesTimer
 var seconds := 0
 var minutes := 0
 
-var main_scene_path = "res://src/TitleScreen.tscn"
+var main_scene_path := "res://src/TitleScreen.tscn"
+var next_level_scene_path : String
 
 
 func _ready():
@@ -35,12 +38,14 @@ func _ready():
 
 
 func _process(_delta):
-	if player:
-		timer_hud.rect_position.x = player_cam.get_camera_position().x - 43
 	if seconds <= 9:
 		time_label.text = str(minutes) + ":0" + str(seconds)
 	else:
 		time_label.text = str(minutes) + ":" + str(seconds)
+	if seconds == 60:
+		seconds = 0
+	
+	soul_count_label.text = "Souls collected: " + str(soul_count)
 	
 	
 	if Input.is_action_just_pressed("pause_game"):
@@ -82,9 +87,10 @@ func game_over(screen_center, end_status):
 		game_over_win_hud.set_position(game_over_pos)
 
 
-func _on_Player_player_hit(body):
-	if body.is_in_group("enemies"):
-		kill_player()
+func _on_Player_player_area_hit(area):
+	if area.is_in_group("collectibles"):
+		area.queue_free()
+		soul_count += 1
 
 
 func _on_TrapsArea_body_shape_entered(body_id, _body, _body_shape, _area_shape):
@@ -95,6 +101,10 @@ func _on_TrapsArea_body_shape_entered(body_id, _body, _body_shape, _area_shape):
 func _on_WinArea_body_shape_entered(body_id, _body, _body_shape, _area_shape):
 	if body_id == player.get_instance_id():
 		win_player()
+
+
+func _on_NextLevelButton_pressed():
+	var _ignored = get_tree().change_scene(next_level_scene_path)
 
 
 func _on_RetryButton_pressed():
@@ -114,9 +124,14 @@ func _on_MinutesTimer_timeout():
 
 
 func _on_QueueFreeTimer_timeout():
-	remove_child(player)
+	player.queue_free()
 
 
 func _on_Unpause_pressed():
 	pause_popup.hide()
 	get_tree().paused = false
+
+
+func _on_InstructionsPopup_popup_hide():
+	seconds_timer.start()
+	minutes_timer.start()
