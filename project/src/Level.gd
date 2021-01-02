@@ -17,7 +17,7 @@ onready var parallax_background := $ParallaxBackground
 onready var level_cam := $LevelCam
 onready var game_over_lose_hud := $GameOverLoseHUD
 onready var game_over_win_hud := $GameOverWinHUD
-onready var traps_area := $TrapsArea
+onready var traps_area : Area2D
 
 onready var death_sound_player := $DeathSoundPlayer
 onready var win_sound_player := $WinSoundPlayer
@@ -91,6 +91,11 @@ func _on_Player_player_area_hit(area):
 	if area.is_in_group("collectibles"):
 		area.queue_free()
 		soul_count += 1
+
+
+func _on_Player_player_hit(body):
+	if body.is_in_group("enemies"):
+		kill_player()
 
 
 func _on_TrapsArea_body_shape_entered(body_id, _body, _body_shape, _area_shape):
