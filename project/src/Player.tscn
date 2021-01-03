@@ -74,7 +74,7 @@ animations = [ {
 "frames": [ ExtResource( 61 ), ExtResource( 60 ), ExtResource( 64 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 59 ), ExtResource( 65 ), ExtResource( 62 ), ExtResource( 63 ) ],
 "loop": true,
 "name": "slide",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
