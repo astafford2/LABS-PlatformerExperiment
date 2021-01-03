@@ -869,7 +869,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 size = 14
 font_data = ExtResource( 16 )
 
-[sub_resource type="TileSet" id=35]
+[sub_resource type="TileSet" id=24]
 16/name = "Tile (4).png 16"
 16/texture = ExtResource( 41 )
 16/tex_offset = Vector2( 0, 0 )
@@ -983,41 +983,25 @@ font_data = ExtResource( 16 )
 23/shapes = [  ]
 23/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 173, 72 )
 
-[sub_resource type="RectangleShape2D" id=37]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 173, 45.9378 )
 
-[sub_resource type="RectangleShape2D" id=38]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 614.008, 176.396 )
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=28]
 size = 30
 font_data = ExtResource( 16 )
 
-[sub_resource type="DynamicFont" id=25]
-size = 25
-font_data = ExtResource( 16 )
-
-[sub_resource type="DynamicFont" id=26]
-size = 25
-font_data = ExtResource( 16 )
-
-[sub_resource type="DynamicFont" id=27]
-size = 50
-font_data = ExtResource( 16 )
-
-[sub_resource type="DynamicFont" id=28]
-size = 20
-font_data = ExtResource( 16 )
-
 [sub_resource type="DynamicFont" id=29]
-size = 20
+size = 25
 font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=30]
-size = 20
+size = 25
 font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=31]
@@ -1028,10 +1012,26 @@ font_data = ExtResource( 16 )
 size = 20
 font_data = ExtResource( 16 )
 
-[sub_resource type="StyleBoxFlat" id=33]
-bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+[sub_resource type="DynamicFont" id=33]
+size = 20
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=34]
+size = 20
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 50
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 20
+font_data = ExtResource( 16 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[sub_resource type="DynamicFont" id=38]
 font_data = ExtResource( 16 )
 
 [node name="Level-4" type="Node2D"]
@@ -1247,7 +1247,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Secrets" type="TileMap" parent="."]
-tile_set = SubResource( 35 )
+tile_set = SubResource( 24 )
 format = 1
 tile_data = PoolIntArray( 458788, 17, 0, 458789, 17, 0, 458790, 17, 0, 458791, 18, 0, 524324, 17, 0, 524325, 17, 0, 524326, 17, 0, 524327, 18, 0, 589857, 17, 0, 589858, 17, 0, 589859, 17, 0, 589860, 17, 0, 589861, 17, 0 )
 
@@ -1256,15 +1256,15 @@ position = Vector2( 2232, 592 )
 
 [node name="SecretsAreaShape" type="CollisionShape2D" parent="SecretsArea2D"]
 position = Vector2( 113, -80 )
-shape = SubResource( 36 )
+shape = SubResource( 25 )
 
 [node name="SecretsAreaShape2" type="CollisionShape2D" parent="SecretsArea2D"]
 position = Vector2( 38.0801, 18.7041 )
-shape = SubResource( 37 )
+shape = SubResource( 26 )
 
 [node name="SecretsAreaShape3" type="CollisionShape2D" parent="SecretsArea2D"]
 position = Vector2( 327.737, 226.461 )
-shape = SubResource( 38 )
+shape = SubResource( 27 )
 
 [node name="LevelCam" type="Camera2D" parent="."]
 
@@ -1282,7 +1282,7 @@ __meta__ = {
 [node name="TimeLabel" type="Label" parent="InfoHUDLayer/TimeHUD"]
 margin_right = 86.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 28 )
 text = "x:xx"
 
 [node name="SecondsTimer" type="Timer" parent="InfoHUDLayer/TimeHUD"]
@@ -1295,7 +1295,7 @@ margin_left = 705.963
 margin_top = 37.3571
 margin_right = 1039.96
 margin_bottom = 77.3571
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 29 )
 text = "Enemies Left: N"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1306,7 +1306,7 @@ margin_left = 15.4597
 margin_top = 35.6762
 margin_right = 370.46
 margin_bottom = 68.6762
-custom_fonts/font = SubResource( 26 )
+custom_fonts/font = SubResource( 30 )
 text = "Souls collected: M"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1328,7 +1328,7 @@ margin_bottom = 102.0
 [node name="GameOverLabel" type="Label" parent="GameOverLoseHUD/VBoxContainer"]
 margin_right = 353.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 31 )
 custom_colors/font_color = Color( 0.858824, 0, 0, 1 )
 text = "GAME OVER"
 align = 1
@@ -1347,14 +1347,14 @@ alignment = 1
 margin_left = 21.0
 margin_right = 174.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 32 )
 text = "Try Again"
 
 [node name="MainMenuButton" type="Button" parent="GameOverLoseHUD/VBoxContainer/HBoxContainer"]
 margin_left = 178.0
 margin_right = 332.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 33 )
 text = "Main Menu"
 
 [node name="GameOverWinHUD" type="MarginContainer" parent="."]
@@ -1373,7 +1373,7 @@ margin_bottom = 102.0
 [node name="GameOverLabel" type="Label" parent="GameOverWinHUD/VBoxContainer"]
 margin_right = 353.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 31 )
 custom_colors/font_color = Color( 0.027451, 0.858824, 0, 1 )
 text = "YOU WIN"
 align = 1
@@ -1392,14 +1392,14 @@ alignment = 1
 margin_left = 24.0
 margin_right = 170.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 30 )
+custom_fonts/font = SubResource( 34 )
 text = "Continue"
 
 [node name="MainMenuButton" type="Button" parent="GameOverWinHUD/VBoxContainer/HBoxContainer"]
 margin_left = 174.0
 margin_right = 328.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 33 )
 text = "Main Menu"
 
 [node name="PausePopup" type="Popup" parent="."]
@@ -1424,7 +1424,7 @@ __meta__ = {
 [node name="PauseLabel" type="Label" parent="PausePopup/VBoxContainer"]
 margin_right = 437.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 31 )
+custom_fonts/font = SubResource( 35 )
 text = "Game Paused"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1443,7 +1443,7 @@ __meta__ = {
 margin_left = 82.0
 margin_right = 196.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 32 )
+custom_fonts/font = SubResource( 36 )
 text = "RESUME"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1453,7 +1453,7 @@ __meta__ = {
 margin_left = 200.0
 margin_right = 354.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 33 )
 text = "Main Menu"
 
 [node name="InstructionsPopup" type="Popup" parent="."]
@@ -1470,8 +1470,8 @@ margin_left = -175.154
 margin_top = 26.9389
 margin_right = 262.846
 margin_bottom = 173.939
-custom_styles/normal = SubResource( 33 )
-custom_fonts/font = SubResource( 34 )
+custom_styles/normal = SubResource( 37 )
+custom_fonts/font = SubResource( 38 )
 text = "Wonderful!
 The melee attack works perfectly. Time to test
 our final mechanic: a projectile attack!
