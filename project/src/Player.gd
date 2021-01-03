@@ -66,7 +66,10 @@ func _physics_process(delta):
 		if sign(fireball_position.position.x) == 1:
 			fireball_position.position.x *= -1
 	elif player_sprite.animation == "slide":
-		_velocity.x = run_speed
+		if player_sprite.flip_h == true:
+			_velocity.x = -run_speed
+		else:
+			_velocity.x = run_speed
 	else:
 		_velocity.x = 0
 	
