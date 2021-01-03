@@ -65,6 +65,8 @@ func _physics_process(delta):
 		current_melee_collision = melee_collision_left
 		if sign(fireball_position.position.x) == 1:
 			fireball_position.position.x *= -1
+	elif player_sprite.animation == "slide":
+		_velocity.x = run_speed
 	else:
 		_velocity.x = 0
 	
