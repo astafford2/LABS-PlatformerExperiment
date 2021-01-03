@@ -133,7 +133,7 @@ script = ExtResource( 19 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-animation = "slide"
+animation = "idle"
 
 [node name="PlayerShape" type="CollisionShape2D" parent="."]
 position = Vector2( -4.48985, 2.24493 )

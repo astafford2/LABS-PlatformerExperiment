@@ -46,10 +46,10 @@ func _physics_process(delta):
 	_velocity.y += GRAVITY * delta
 	
 	if melee_enabled and Input.is_action_just_pressed("melee"):
-		attack_melee(player_sprite.animation  if player_sprite.animation != "melee" else "idle")
+		attack_melee(player_sprite.animation if player_sprite.animation != "melee" else "idle")
 	
 	if projectile_enabled and Input.is_action_just_pressed("projectile"):
-		attack_projectile(player_sprite.animation  if player_sprite.animation != "projectile" else "idle")
+		attack_projectile(player_sprite.animation if player_sprite.animation != "projectile" else "idle")
 	
 	if Input.is_action_pressed("move_right"):
 		player_sprite.flip_h = false
@@ -66,9 +66,14 @@ func _physics_process(delta):
 	else:
 		_velocity.x = 0
 	
+	if Input.is_action_just_pressed("slide"):
+		player_slide(player_sprite.animation if player_sprite.animation != "slide" else "idle")
+	
 	if player_sprite.animation == "melee":
 		pass
 	elif player_sprite.animation == "projectile":
+		pass
+	elif player_sprite.animation == "slide":
 		pass
 	elif is_on_floor():
 		player_sprite.animation = "run" if abs(_velocity.x) > 0 else "idle"
@@ -95,6 +100,12 @@ func _physics_process(delta):
 	_velocity = move_and_slide(_velocity, Vector2.UP)
 
 
+func player_slide(current_anim):
+	prev_anim = current_anim
+	player_sprite.animation = "slide"
+	player_sprite.play()
+
+
 func attack_melee(current_anim):
 	prev_anim = current_anim
 	current_melee_collision.disabled = false
@@ -119,6 +130,8 @@ func _on_AnimatedSprite_animation_finished():
 		melee_collision_left.disabled = true
 		melee_collision_right.disabled = true
 	if player_sprite.animation == "projectile":
+		player_sprite.animation = prev_anim
+	if player_sprite.animation == "slide":
 		player_sprite.animation = prev_anim
 
 
