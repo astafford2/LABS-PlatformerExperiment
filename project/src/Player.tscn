@@ -117,7 +117,7 @@ radius = 23.7421
 height = 46.9387
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 35.5286
+radius = 30.2896
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 31.0218, 51.3921 )
@@ -140,7 +140,7 @@ position = Vector2( -4.48985, 2.24493 )
 shape = SubResource( 2 )
 
 [node name="PlayerShapeSlide" type="CollisionShape2D" parent="."]
-position = Vector2( -15.6261, 12.9357 )
+position = Vector2( -11.8397, 18.7266 )
 shape = SubResource( 5 )
 disabled = true
 

@@ -21,6 +21,8 @@ var current_melee_collision : CollisionShape2D = melee_collision_right
 var projectile_enabled := false
 
 onready var player_sprite := $AnimatedSprite
+onready var player_shape := $PlayerShape
+onready var player_shape_slide := $PlayerShapeSlide
 onready var melee_collision_right := $MeleeAreaRight/MeleeAreaRightShape
 onready var melee_collision_left := $MeleeAreaLeft/MeleeAreaLeftShape
 onready var fireball_projectile := preload("res://src/Fireball.tscn")
@@ -102,6 +104,8 @@ func _physics_process(delta):
 
 func player_slide(current_anim):
 	prev_anim = current_anim
+	player_shape.disabled = true
+	player_shape_slide.disabled = false
 	player_sprite.animation = "slide"
 	player_sprite.play()
 
@@ -133,6 +137,8 @@ func _on_AnimatedSprite_animation_finished():
 		player_sprite.animation = prev_anim
 	if player_sprite.animation == "slide":
 		player_sprite.animation = prev_anim
+		player_shape_slide.disabled = true
+		player_shape.disabled = false
 
 
 func explode_cogwheels():
