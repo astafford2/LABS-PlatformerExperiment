@@ -1146,7 +1146,6 @@ custom_fonts/font = SubResource( 28 )
 text = "Main Menu"
 
 [node name="InstructionsPopup" type="Popup" parent="."]
-visible = true
 margin_left = 220.292
 margin_top = 299.308
 margin_right = 564.292
