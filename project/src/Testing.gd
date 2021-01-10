@@ -2,6 +2,6 @@ extends Level
 
 
 func _ready():
-	player.enable_level_2()
-	player.enable_level_3()
-	player.enable_level_4()
+	player.enable_double_jump()
+	player.enable_melee()
+	player.enable_projectile()

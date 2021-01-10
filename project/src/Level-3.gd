@@ -6,7 +6,7 @@ onready var enemy_count_label := $InfoHUDLayer/EnemyCountLabel
 
 
 func _ready():
-	player.enable_level_3()
+	player.enable_melee()
 	next_scene_path = "res://src/Level-4.tscn"
 	
 	for enemy in get_tree().get_nodes_in_group("enemies"):

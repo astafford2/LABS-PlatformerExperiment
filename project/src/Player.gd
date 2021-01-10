@@ -191,7 +191,7 @@ func _on_ShakeTime_timeout():
 	shake_intensity = 0
 
 
-func enable_level_2():
+func enable_double_jump():
 	double_jump_enabled = true
 	player_cam.limit_top = -320
 	player_cam.limit_bottom = 620
@@ -199,9 +199,9 @@ func enable_level_2():
 	player_cam.drag_margin_v_enabled = true
 
 
-func enable_level_3():
+func enable_melee():
 	melee_enabled = true
 
 
-func enable_level_4():
+func enable_projectile():
 	projectile_enabled = true

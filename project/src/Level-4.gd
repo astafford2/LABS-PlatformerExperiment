@@ -9,7 +9,7 @@ onready var secrets_tilemap := $Secrets
 
 
 func _ready():
-	player.enable_level_4()
+	player.enable_projectile()
 	instructions_popup.popup()
 	next_scene_path = "res://src/CongratsScreen.tscn"
 	
