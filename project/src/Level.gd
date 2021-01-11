@@ -47,7 +47,7 @@ func _process(_delta):
 	if seconds == 60:
 		seconds = 0
 	
-	soul_count_label.text = "Souls collected: " + str(soul_count)
+	# soul_count_label.text = "Souls collected: " + str(soul_count)
 	
 	
 	if Input.is_action_just_pressed("pause_game"):
