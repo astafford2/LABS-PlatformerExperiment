@@ -12,8 +12,10 @@ onready var player_sprite := $Player/AnimatedSprite
 onready var queue_free_timer := $Player/QueueFreeTimer
 
 var soul_count := 0
+var total_soul_count := 0
 onready var soul_count_label := $InfoHUDLayer/SoulCountLabel
 onready var soul_group := $SoulGroup
+onready var souls_guage := $InfoHUDLayer/SoulBar/Guage
 
 onready var parallax_background := $ParallaxBackground
 onready var level_cam := $LevelCam
@@ -37,6 +39,9 @@ var next_scene_path : String
 
 func _ready():
 	instructions_popup.popup()
+	
+	for soul in get_tree().get_nodes_in_group("collectibles"):
+		total_soul_count += 1
 
 
 func _process(_delta):
@@ -47,7 +52,7 @@ func _process(_delta):
 	if seconds == 60:
 		seconds = 0
 	
-	# soul_count_label.text = "Souls collected: " + str(soul_count)
+	souls_guage.value = (float(soul_count) / float(total_soul_count)) * 100
 	
 	
 	if Input.is_action_just_pressed("pause_game"):
