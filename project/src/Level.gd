@@ -15,7 +15,7 @@ var soul_count := 0
 var total_soul_count := 0
 onready var soul_count_label := $InfoHUDLayer/SoulCountLabel
 onready var soul_group := $SoulGroup
-onready var souls_guage := $InfoHUDLayer/SoulBar/Guage
+onready var souls_guage := $InfoHUDLayer/SoulContainer/SoulBar/Guage
 
 onready var parallax_background := $ParallaxBackground
 onready var level_cam := $LevelCam
