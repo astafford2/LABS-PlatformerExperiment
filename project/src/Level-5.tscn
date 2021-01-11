@@ -940,6 +940,7 @@ one_shot = true
 [node name="LevelCam" type="Camera2D" parent="."]
 
 [node name="LevelEndArea" type="Area2D" parent="."]
+position = Vector2( -1, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEndArea"]
 position = Vector2( 3201.07, 733.27 )
