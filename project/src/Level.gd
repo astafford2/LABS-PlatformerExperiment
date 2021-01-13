@@ -13,9 +13,8 @@ onready var queue_free_timer := $Player/QueueFreeTimer
 
 var soul_count := 0
 var total_soul_count := 0
-onready var soul_count_label := $InfoHUDLayer/SoulCountLabel
 onready var soul_group := $SoulGroup
-onready var souls_guage := $InfoHUDLayer/SoulContainer/SoulBar/Guage
+onready var souls_guage := $InfoHUDLayer/SoulContainer/SoulBar/Gauge
 
 onready var parallax_background := $ParallaxBackground
 onready var level_cam := $LevelCam

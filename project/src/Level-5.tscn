@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://assets/Tiles/BGTile (6).png" type="Texture" id=1]
 [ext_resource path="res://assets/Tiles/Tile (5).png" type="Texture" id=2]
@@ -29,13 +29,12 @@
 [ext_resource path="res://assets/Tiles/Fence (1).png" type="Texture" id=27]
 [ext_resource path="res://assets/Tiles/Tile (13).png" type="Texture" id=28]
 [ext_resource path="res://assets/Tiles/Fence (3).png" type="Texture" id=29]
-[ext_resource path="res://assets/GUI/lifebar_fill.png" type="Texture" id=30]
+[ext_resource path="res://src/SoulsGauge.tscn" type="PackedScene" id=30]
 [ext_resource path="res://assets/Tiles/BGTile (4).png" type="Texture" id=31]
 [ext_resource path="res://assets/Tiles/BGTile (2).png" type="Texture" id=32]
 [ext_resource path="res://assets/Tiles/BGTile (5).png" type="Texture" id=33]
 [ext_resource path="res://assets/Tiles/Tile (2).png" type="Texture" id=34]
 [ext_resource path="res://assets/Tiles/Tile (1).png" type="Texture" id=35]
-[ext_resource path="res://assets/GUI/lifebar_bg.png" type="Texture" id=36]
 [ext_resource path="res://assets/Tiles/Tile (9).png" type="Texture" id=37]
 [ext_resource path="res://assets/Tiles/Fence (2).png" type="Texture" id=38]
 [ext_resource path="res://src/SoulCollectible.tscn" type="PackedScene" id=39]
@@ -865,14 +864,10 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 } ]
 35/z_index = 0
 
-[sub_resource type="LineShape2D" id=34]
-
-[sub_resource type="DynamicFont" id=23]
-size = 30
-font_data = ExtResource( 16 )
+[sub_resource type="LineShape2D" id=23]
 
 [sub_resource type="DynamicFont" id=24]
-size = 25
+size = 30
 font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=25]
@@ -969,7 +964,7 @@ position = Vector2( -1, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEndArea"]
 position = Vector2( 3201.07, 733.27 )
-shape = SubResource( 34 )
+shape = SubResource( 23 )
 
 [node name="InfoHUDLayer" type="CanvasLayer" parent="."]
 
@@ -985,7 +980,7 @@ __meta__ = {
 [node name="TimeLabel" type="Label" parent="InfoHUDLayer/TimeHUD"]
 margin_right = 86.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
 text = "x:xx"
 
 [node name="SecondsTimer" type="Timer" parent="InfoHUDLayer/TimeHUD"]
@@ -998,43 +993,13 @@ margin_left = 705.963
 margin_top = 37.3571
 margin_right = 1039.96
 margin_bottom = 77.3571
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 25 )
 text = "Enemies Left: N"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SoulContainer" type="MarginContainer" parent="InfoHUDLayer"]
-margin_left = 7.0
-margin_top = 35.0
-margin_right = 340.0
-margin_bottom = 125.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SoulBar" type="VBoxContainer" parent="InfoHUDLayer/SoulContainer"]
-margin_right = 333.0
-margin_bottom = 90.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SoulCountLabel" type="Label" parent="InfoHUDLayer/SoulContainer/SoulBar"]
-margin_right = 333.0
-margin_bottom = 33.0
-custom_fonts/font = SubResource( 25 )
-text = "Souls collected: "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Guage" type="TextureProgress" parent="InfoHUDLayer/SoulContainer/SoulBar"]
-margin_top = 37.0
-margin_right = 333.0
-margin_bottom = 77.0
-texture_under = ExtResource( 36 )
-texture_progress = ExtResource( 30 )
+[node name="SoulContainer" parent="InfoHUDLayer" instance=ExtResource( 30 )]
 
 [node name="GameOverLoseHUD" type="MarginContainer" parent="."]
 margin_left = 134.929
